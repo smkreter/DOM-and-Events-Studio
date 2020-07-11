@@ -8,13 +8,20 @@ window.addEventListener("load", function() {
     flightStatus = document.getElementById("flightStatus");
     let shuttleFlightScreen = document.getElementById("shuttleBackground");
     let shuttleAlt = document.getElementById("spaceShuttleHeight");
+    shuttleAlt.innerHTML = 0;
     //let shuttleHeight = shuttleHeightGraph.innerHTML;
     takeoffButton.onclick = function() {
         let takeOffConfirmation = window.confirm("Confirm that the shuttle is ready for takeoff")
         if (takeOffConfirmation === true) {
         flightStatus.innerHTML = "Shuttle in flight."
         shuttleFlightScreen.style.background = "blue";
-        shuttleAlt.innerHTML = Number(shuttleAlt.innerHTML);
+        currentAlt = Number(shuttleAlt.innerHTML);
+        newAlt = 10000 + currentAlt;
+        shuttleAlt.innerHTML = newAlt;
+        // still a string after this shuttleAlt.innerHTML = parseFloat(shuttleAlt.innerHTML);
+        // this still gives me a string: shuttleAlt.innerHTML = parseInt(shuttleAlt.innerHTML, 10);
+        // this one still gives me a string: shuttleAlt.innerHTML = Number(shuttleAlt.innerHTML);
+        //shuttleAlt.innerHTML = typeof shuttleAlt.innerHTML;
         //shuttleAlt.innerHTML = shuttleAlt.innerHTML + 10000;  
         //shu
         /*
