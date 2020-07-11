@@ -5,6 +5,7 @@ let flightStatus = null;
 //let shuttleAlt.innerHTML = 0;
 window.addEventListener("load", function() {
     takeoffButton = document.getElementById("takeoff");
+    landButton = document.getElementById("landing");
     flightStatus = document.getElementById("flightStatus");
     let shuttleFlightScreen = document.getElementById("shuttleBackground");
     let shuttleAlt = document.getElementById("spaceShuttleHeight");
@@ -13,31 +14,20 @@ window.addEventListener("load", function() {
     takeoffButton.onclick = function() {
         let takeOffConfirmation = window.confirm("Confirm that the shuttle is ready for takeoff")
         if (takeOffConfirmation === true) {
-        flightStatus.innerHTML = "Shuttle in flight."
+        flightStatus.innerHTML = "Shuttle in flight.";
         shuttleFlightScreen.style.background = "blue";
         currentAlt = Number(shuttleAlt.innerHTML);
         newAlt = 10000 + currentAlt;
         shuttleAlt.innerHTML = newAlt;
-        // still a string after this shuttleAlt.innerHTML = parseFloat(shuttleAlt.innerHTML);
-        // this still gives me a string: shuttleAlt.innerHTML = parseInt(shuttleAlt.innerHTML, 10);
-        // this one still gives me a string: shuttleAlt.innerHTML = Number(shuttleAlt.innerHTML);
-        //shuttleAlt.innerHTML = typeof shuttleAlt.innerHTML;
-        //shuttleAlt.innerHTML = shuttleAlt.innerHTML + 10000;  
-        //shu
-        /*
-        shuttleAlt.innerHTML = Number(shuttleAlt.innerHTML) + 10000;
-        shuttleAlt.innerHTML = shuttleAlt.innerHTML.toString;
-    
-        shuttleHeight = Number(shuttleHeight);
-        shuttleHeight = shuttleHeight + 10000;
-       
-        shuttleHeight.innerHTML = Number(shuttleHeight.innerHTML);
-        shuttleHeight.innerHTML += 10000;  
-        */          
+         
         }
     }
-    /*
-    takeoffButton.addEventListener("click", function(event) {
-        flightStatus.innerHTML = "Shuttle in flight.";
-        */
+    // land button stuff
+    landButton.onclick = function() {
+        let landingNotice = window.confirm("The shuttle is landing. Landing gear engaged.");
+        flightStatus.innerHTML = "The shuttle has landed.";
+        shuttleFlightScreen.style.background = "green";
+        shuttleAlt.innerHTML = 0;
+    }
+
     });
