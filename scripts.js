@@ -2,19 +2,21 @@
 // Remember to pay attention to page loading!
 let takeoffButton = null;
 let flightStatus = null;
-let shuttleAlt = 0;
+//let shuttleAlt.innerHTML = 0;
 window.addEventListener("load", function() {
     takeoffButton = document.getElementById("takeoff");
     flightStatus = document.getElementById("flightStatus");
     let shuttleFlightScreen = document.getElementById("shuttleBackground");
-    let shuttleAlt = document.getElementById("shuttleAlt");
+    let shuttleAlt = document.getElementById("spaceShuttleHeight");
     //let shuttleHeight = shuttleHeightGraph.innerHTML;
     takeoffButton.onclick = function() {
         let takeOffConfirmation = window.confirm("Confirm that the shuttle is ready for takeoff")
         if (takeOffConfirmation === true) {
         flightStatus.innerHTML = "Shuttle in flight."
         shuttleFlightScreen.style.background = "blue";
-        shuttleAlt += 10000;
+        shuttleAlt.innerHTML = Number(shuttleAlt.innerHTML);
+        //shuttleAlt.innerHTML = shuttleAlt.innerHTML + 10000;  
+        //shu
         /*
         shuttleAlt.innerHTML = Number(shuttleAlt.innerHTML) + 10000;
         shuttleAlt.innerHTML = shuttleAlt.innerHTML.toString;
