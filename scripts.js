@@ -6,6 +6,7 @@ let flightStatus = null;
 window.addEventListener("load", function() {
     takeoffButton = document.getElementById("takeoff");
     landButton = document.getElementById("landing");
+    abortButton = document.getElementById("missionAbort");
     flightStatus = document.getElementById("flightStatus");
     let shuttleFlightScreen = document.getElementById("shuttleBackground");
     let shuttleAlt = document.getElementById("spaceShuttleHeight");
@@ -29,5 +30,13 @@ window.addEventListener("load", function() {
         shuttleFlightScreen.style.background = "green";
         shuttleAlt.innerHTML = 0;
     }
-
+    // abort mission button
+    abortButton.onclick = function() {
+        let abortNotice = window.confirm("Confirm that you want to abort the mission.");
+        if (abortNotice === true) {
+            flightStatus.innerHTML = "Mission aborted.";
+            shuttleFlightScreen.style.background = "green";
+            shuttleAlt.innerHTML = 0;
+        }
+    }
     });
