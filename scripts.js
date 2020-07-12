@@ -46,11 +46,28 @@ window.addEventListener("load", function() {
             shuttleAlt.innerHTML = 0;
         }
     }
-    /*
         // up button
     upButton.onclick = function() {
-        rocket.style.position = up: 10px;
+        rocket.style.bottom = '10px';
+        currentAlt = Number(shuttleAlt.innerHTML);
+        newAlt = 10000 + currentAlt;
+        shuttleAlt.innerHTML = newAlt;   
     }
-*/
+
+    downButton.onclick = function() {
+        rocket.style.top = '10px';
+        currentAlt = Number(shuttleAlt.innerHTML);
+        newAlt = currentAlt - 10000;
+        shuttleAlt.innerHTML = newAlt;   
+    }
+
+    rightButton.onclick = function() {
+        rocket.style.left = '10px'; 
+    }
+
+    leftButton.onclick = function() {
+        rocket.style.right = '10px'; 
+    }
+
     
     });
