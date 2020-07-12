@@ -7,7 +7,8 @@ window.addEventListener("load", function() {
     takeoffButton = document.getElementById("takeoff");
     landButton = document.getElementById("landing");
     abortButton = document.getElementById("missionAbort");
-    
+
+
     upButton = document.getElementById("up");
     downButton = document.getElementById("down");
     leftButton = document.getElementById("left");
@@ -17,8 +18,10 @@ window.addEventListener("load", function() {
     let shuttleFlightScreen = document.getElementById("shuttleBackground");
     let shuttleAlt = document.getElementById("spaceShuttleHeight");
     let rocket = document.getElementById("rocket");
-    shuttleAlt.innerHTML = 0;
-    //let shuttleHeight = shuttleHeightGraph.innerHTML;
+    let yCoords = document.getElementById("y-log");
+    rocket.style.position = "relative";
+    //shuttleAlt.innerHTML = 0;
+
     takeoffButton.onclick = function() {
         let takeOffConfirmation = window.confirm("Confirm that the shuttle is ready for takeoff")
         if (takeOffConfirmation === true) {
@@ -30,6 +33,7 @@ window.addEventListener("load", function() {
          
         }
     }
+
     // land button stuff
     landButton.onclick = function() {
         let landingNotice = window.confirm("The shuttle is landing. Landing gear engaged.");
@@ -47,17 +51,18 @@ window.addEventListener("load", function() {
         }
     }
         // up button
+    
     upButton.onclick = function() {
-       // let element = document.getElementById("rocket");
-        // let x = 100;
-        //rocket.style.left = "10px";
-        // this is wrong: rocket.style.bottom = '10px';
-        rocket.classList.add('relative-down');
+      
+        currentYPos = parseFloat(rocket.style.top);
+        newYPos = currentYPos - 10;
+        rocket.style.top = newYPos + "px";
+        yCoords.innerHTML = rocket.style.top;
         currentAlt = Number(shuttleAlt.innerHTML);
         newAlt = 10000 + currentAlt;
         shuttleAlt.innerHTML = newAlt;   
     }
-
+/*
     downButton.onclick = function() {
         rocket.style.bottom = '10px';
         currentAlt = Number(shuttleAlt.innerHTML);
@@ -73,5 +78,5 @@ window.addEventListener("load", function() {
         rocket.style.right = '10px'; 
     }
 
-    
+    */
     });
