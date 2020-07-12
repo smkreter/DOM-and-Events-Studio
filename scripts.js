@@ -7,10 +7,12 @@ window.addEventListener("load", function() {
     takeoffButton = document.getElementById("takeoff");
     landButton = document.getElementById("landing");
     abortButton = document.getElementById("missionAbort");
+    
     upButton = document.getElementById("up");
     downButton = document.getElementById("down");
     leftButton = document.getElementById("left");
     rightButton = document.getElementById("right");
+    
     flightStatus = document.getElementById("flightStatus");
     let shuttleFlightScreen = document.getElementById("shuttleBackground");
     let shuttleAlt = document.getElementById("spaceShuttleHeight");
@@ -43,10 +45,12 @@ window.addEventListener("load", function() {
             shuttleFlightScreen.style.background = "green";
             shuttleAlt.innerHTML = 0;
         }
-    // up button
-    upButton.onclick function() {
+    }
+    /*
+        // up button
+    upButton.onclick = function() {
         rocket.style.position = up: 10px;
     }
-
-    }
+*/
+    
     });
