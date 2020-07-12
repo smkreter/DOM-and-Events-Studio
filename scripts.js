@@ -48,14 +48,18 @@ window.addEventListener("load", function() {
     }
         // up button
     upButton.onclick = function() {
-        rocket.style.bottom = '10px';
+       // let element = document.getElementById("rocket");
+        // let x = 100;
+        //rocket.style.left = "10px";
+        // this is wrong: rocket.style.bottom = '10px';
+        rocket.classList.add('relative-down');
         currentAlt = Number(shuttleAlt.innerHTML);
         newAlt = 10000 + currentAlt;
         shuttleAlt.innerHTML = newAlt;   
     }
 
     downButton.onclick = function() {
-        rocket.style.top = '10px';
+        rocket.style.bottom = '10px';
         currentAlt = Number(shuttleAlt.innerHTML);
         newAlt = currentAlt - 10000;
         shuttleAlt.innerHTML = newAlt;   

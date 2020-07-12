@@ -5,7 +5,12 @@
     width: 40%;
 }
 
-#relative-up {
+.relative-up {
     position: relative;
     top: 10px;
+}
+
+.relative-down {
+    position: relative;
+    bottom: 10px;
 }
